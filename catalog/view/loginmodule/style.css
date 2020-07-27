@@ -1,0 +1,480 @@
+/*.form-group {
+margin-bottom : 15px;
+}
+.form-group label.error {
+color : #DD2723;
+}
+.radio, .checkbox {
+display : block;
+min-height : 20px;
+padding-left : 20px;
+margin-top : 10px;
+margin-bottom : 10px;
+}
+.radio label, .checkbox label {
+display : inline;
+font-weight : normal;
+cursor : pointer;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+float : left;
+margin-left : -20px;
+}
+.radio + .radio, .checkbox + .checkbox {
+margin-top : -5px;
+}
+.radio-inline, .checkbox-inline {
+display : inline-block;
+padding-left : 20px;
+margin-bottom : 0;
+font-weight : normal;
+vertical-align : middle;
+cursor : pointer;
+}
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+margin-top : 0;
+margin-left : 10px;
+}
+.modal-open {
+overflow : hidden;
+}
+.modal {
+position : fixed;
+top : 0;
+right : 0;
+bottom : 0;
+left : 0;
+z-index : 1050;
+display : none;
+overflow : auto;
+overflow-y : scroll;
+outline : 0;
+}
+.modal.fade .modal-dialog {
+transition : transform 0.3s ease-out;
+transform : translate(0,-25%);
+}
+.modal.in .modal-dialog {
+transform : translate(0,0);
+}
+.modal-dialog {
+position : relative;
+width : auto;
+margin : 10px;
+}
+.modal-content {
+position : relative;
+background-color : #fff;
+background-clip : padding-box;
+border : #999 solid 1px;
+border : rgb(0 0 0 / 0.2) solid 1px;
+border-radius : 6px;
+outline : none;
+box-shadow : 0 3px 9px rgb(0 0 0 / 0.5);
+}
+.modal-backdrop {
+position : fixed;
+top : 0;
+right : 0;
+bottom : 0;
+left : 0;
+z-index : 1040;
+background-color : #000;
+}
+.modal-backdrop.fade {
+opacity : 0;
+}
+.modal-backdrop.in {
+opacity : 0.5;
+}
+.modal-header {
+min-height : 16.42857143px;
+padding : 15px;
+border-bottom : 1px solid #e5e5e5;
+}
+.modal-header .close {
+margin-top : -2px;
+}
+.modal-title {
+margin : 0;
+line-height : 1.42857143;
+}
+.modal-body {
+position : relative;
+padding : 20px;
+max-height : 100%;
+overflow : hidden;
+}
+.modal-footer {
+padding : 19px 20px 20px;
+margin-top : 15px;
+text-align : right;
+border-top : 1px solid #e5e5e5;
+}
+.modal-footer .btn + .btn {
+margin-bottom : 0;
+margin-left : 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+margin-left : -1px;
+}
+.modal-footer .btn-block + .btn-block {
+margin-left : 0;
+}
+@media (min-width:780px) {
+.modal-dialog {
+width : 600px;
+margin : 30px auto;
+}
+.modal-content {
+box-shadow : 0 5px 15px rgb(0 0 0 / 0.5);
+}
+.modal-sm {
+width : 300px;
+}
+}
+@media (min-width:1000px) {
+.modal-lg {
+width : 900px;
+}
+}
+.modal-content .modal-body .or {
+text-align : center;
+}
+.modal-content .modal-body .or span {
+display : inline-block;
+margin : 0 auto;
+padding : 0 15px;
+background : #fff;
+position : relative;
+z-index : 1;
+}
+.modal-content .modal-body .or:after {
+position : absolute;
+content : "";
+z-index : 0;
+margin-top : 11px;
+left : 20px;
+right : 20px;
+border-bottom : 1px dotted #cbcbcb;
+}
+.fa-modal {
+padding : 40px 0;
+}
+.btn-facebook, .btn-linkedin {
+padding-left : 25px;
+}
+.btn-facebook, .btn-facebook:active, .btn-facebook:focus {
+background-color : #4a67a9;
+color : #fff;
+box-shadow : 0 2px 0 #3f5890;
+border-radius : 2px;
+border : 0;
+}
+.btn-facebook:hover {
+background-color : #5474bc;
+color : #fff;
+box-shadow : 0 2px 0 #3F5890, 0 0 30px rgb(255 255 255 / 0.15) inset;
+}
+.btn-facebook:active {
+box-shadow : 0 0 30px rgb(255 255 255 / 0.15) inset;
+margin-top : 2px;
+margin-bottom : -2px;
+}
+.btn-customerlogin, .btn-linkedin {
+padding-left : 25px;
+}
+.btn-customerlogin, .btn-customerlogin:active, .btn-customerlogin:focus {
+ background-color: #30b87d;
+ color: #fff;
+ box-shadow: 0 2px 0 #0a8c53;
+ border-radius: 2px;
+ border: 0;
+}
+.btn-customerlogin:hover {
+background-color : #2d9c6c;
+color : #fff;
+box-shadow : 0 2px 0 #007b47, 0 0 30px rgb(255 255 255 / 0.15) inset;
+}
+.btn-customerlogin:active {
+box-shadow : 0 0 30px rgb(255 255 255 / 0.15) inset;
+margin-top : 2px;
+margin-bottom : -2px;
+}
+.btn-linkedin, .btn-linkedin:active, .btn-linkedin:focus {
+background-color : #DD4B39;
+color : #fff;
+box-shadow : 0 2px 0 #842418;
+border-radius : 2px;
+border : 0;
+}
+.btn-linkedin:hover {
+background-color : #E74B37;
+color : #fff;
+box-shadow : 0 2px 0 #E74B37, 0 0 30px rgb(255 255 255 / 0.15) inset;
+}
+.btn-linkedin:active {
+box-shadow : 0 0 30px rgb(255 255 255 / 0.15) inset;
+margin-top : 2px;
+margin-bottom : -2px;
+}
+.btn-facebook i.fa, .btn-linkedin i.fa {
+font-size : 20px;
+position : absolute;
+left : 25px;
+margin-top : 1px;
+padding-right : 10px;
+border-right : 0 solid rgb(0 0 0 / 0.2);
+}
+.btn-facebook i.fa:after, .btn-linkedin i.fa:after {
+border-right : 1px solid rgb(255 255 255 / 0.1);
+content : "";
+margin-left : 11px;
+position : absolute;
+top : 0;
+bottom : 0;
+}
+
+.form-control {
+border : #dfdfdf solid 2px;
+border-radius : 3px;
+box-shadow : none;
+padding : 6px 8px;
+}
+select.form-control:after {
+font-family : FontAwesome;
+font-style : normal;
+font-weight : normal;
+line-height : 1;
+content : "\f0d7";
+}
+.form-control:focus, .form-control.focus {
+border-color : #78acdc;
+outline : 0;
+box-shadow : none !important ;
+}
+.form-control.half-control {
+width : 50%;
+}
+
+.has-feedback .form-control {
+padding-right : 32px;
+}
+.has-success .form-control {
+border-color : #30b87d;
+}
+.has-success .form-control:focus {
+border-color : #30b87d;
+}
+.has-success .form-control-feedback {
+color : #30b87d;
+}
+.has-icon {
+position : relative;
+}
+.has-icon .form-control {
+padding-left : 37px;
+}
+.has-icon .select ~ .select .form-control {
+padding-left : 8px;
+}
+.has-icon .form-control-icon {
+position : absolute;
+top : 5px;
+left : 2px;
+display : block;
+width : 30px;
+height : 24px;
+line-height : 24px;
+text-align : center;
+border-right : 1px solid #FFF;
+padding-left : 3px;
+color : #918f8f;
+border-color : #dfdfdf;
+}
+.has-icon label ~ .form-control-icon {
+top : 30px;
+}
+@media (min-width:768px) {
+#member-modal .modal-dialog {
+width : 440px;
+}
+}
+#member-modal .modal-title {
+font-size : 34px;
+font-weight : 300;
+border-bottom : 1px solid #cbcbcb;
+padding : 0 15px 5px 0;
+margin-bottom : 15px;
+text-align : center;
+white-space : nowrap;
+overflow : hidden;
+text-overflow : ellipsis;
+}
+#member-modal .modal-title .close {
+margin-right : -15px;
+}
+#member-modal .modal-content {
+border : rgb(0 0 0 / 0.05) solid 1px;
+box-shadow : 4px 4px 0 rgb(0 0 0 / 0.04);
+overflow : hidden;
+position : relative;
+}
+#member-modal .modal-content .modal-body {
+border-radius : 6px;
+background : #fff;
+padding-bottom : 75px;
+transform-style : preserve-3d;
+}
+#member-modal .modal-content .modal-body .tooltip-inner {
+max-width : 80%;
+}
+#member-modal .modal-content .modal-body .help-block {
+font-size : 12px;
+}
+#member-modal .modal-content .modal-body .or {
+text-align : center;
+}
+#member-modal .modal-content .modal-body .or span {
+display : inline-block;
+margin : 0 auto;
+padding : 0 15px;
+background : #fff;
+position : relative;
+z-index : 1;
+}
+#member-modal .modal-content .modal-body .or:after {
+position : absolute;
+content : "";
+z-index : 0;
+margin-top : 11px;
+left : 20px;
+right : 20px;
+border-bottom : 1px dotted #cbcbcb;
+}
+#member-modal .modal-content .modal-body.register .btn-go-prev {
+position : absolute;
+padding : 6px 12px;
+margin-bottom : 0;
+font-size : 14px;
+font-weight : normal;
+line-height : 1.42857143;
+text-align : center;
+white-space : nowrap;
+vertical-align : middle;
+}
+#member-modal .modal-content .modal-body.register .btn-go-prev:hover {
+text-decoration : none;
+}
+#member-modal .modal-content .modal-body.register .btn-go-prev .fa {
+font-size : 15px;
+margin-right : 3px;
+}
+#member-modal .modal-content .modal-body.register .steps {
+position : relative;
+margin : 0 -20px;
+}
+#member-modal .modal-content .modal-body.register .steps.animating {
+transition : all 0.4s ease-in-out;
+}
+#member-modal .modal-content .modal-body.register .steps.go2 {
+margin : 0 20px 0 -60px;
+left : -100%;
+}
+#member-modal .modal-content .modal-body.register .steps > div {
+position : relative;
+padding : 0 35px;
+}
+#member-modal .modal-content .modal-body.register .steps .step2 {
+position : absolute;
+top : 0;
+left : 100%;
+width : 100%;
+}
+#member-modal .modal-content .modal-body.register .steps .step2 .activation_message .glyphicon {
+font-size : 40px;
+color : #009000;
+margin-bottom : 10px;
+border : #009000 solid 2px;
+border-radius : 50%;
+padding : 15px 16px 15px 14px;
+}
+#member-modal .modal-content .modal-body.register .steps .step2 form {
+margin-top : 12px;
+}
+#member-modal .modal-content .modal-body.register .btn-primary[data-toggle="tab"]:after {
+position : absolute;
+content : "\f0d8";
+font-family : FontAwesome;
+font-size : 32px;
+bottom : -34px;
+left : 50%;
+margin : 0 0 0 -10px;
+text-shadow : 0 -3px 0 #e4e4e4;
+z-index : 10;
+}
+#member-modal .modal-content .modal-body.register .tab-content .h3 {
+padding : 0 5px 10px;
+margin-bottom : 10px;
+border-bottom : 1px dotted #cbcbcb;
+}
+#member-modal .modal-content .modal-body.register .tab-content .tab-pane.first, #member-modal .modal-content .modal-body.register .tab-content .tab-pane.second, #member-modal .modal-content .modal-body.register .tab-content .tab-pane.third {
+border : #e4e4e4 solid 2px;
+padding : 15px;
+}
+#member-modal .modal-content .modal-body.register .tab-content ul {
+list-style : none;
+padding : 0;
+}
+#member-modal .modal-content .modal-body.register .tab-content li {
+position : relative;
+padding : 4px 0 0 25px;
+font-size : 13px;
+color : #686868;
+}
+#member-modal .modal-content .modal-body.register .tab-content li:before {
+position : absolute;
+content : "\f05d";
+top : 0;
+left : 0;
+font-family : FontAwesome;
+font-size : 18px;
+color : #3583ca;
+}
+#member-modal .modal-content .modal-body.register .tab-content li:last-child:before {
+content : "\f055";
+}
+#member-modal .modal-content .modal-body.login {
+text-align : center;
+z-index : 2;
+}
+#member-modal .modal-content .modal-body.login form {
+margin-top : 12px;
+}
+#member-modal .modal-content .modal-body.login form .checkbox {
+margin-top : -1px;
+}
+#member-modal .modal-content .modal-body.login form button.btn {
+margin-top : 10px;
+}
+#member-modal .modal-content .modal-body.animating {
+position : absolute;
+top : 100%;
+left : 0;
+right : 0;
+}
+#member-modal .modal-footer {
+border-bottom-right-radius : 6px;
+border-bottom-left-radius : 6px;
+position : absolute;
+z-index : 1060;
+bottom : 0;
+left : 0;
+right : 0;
+text-align : center;
+background-color : #fafafa;
+margin : 20px 0 0;
+}
+#messages {
+min-height : 400px;
+}*/

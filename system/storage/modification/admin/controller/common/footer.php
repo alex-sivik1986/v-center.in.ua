@@ -1,0 +1,22 @@
+<?php
+class ControllerCommonFooter extends Controller {
+	public function index() {
+$this->db->query("CREATE TABLE IF NOT EXISTS opencartweb_login_popup ( `id` int(1) NOT NULL, `login_text` varchar(50) NOT NULL, `login_url` text NOT NULL, `register_url` text NOT NULL, `remember_me_text` varchar(50) NOT NULL, `forgotten_text` varchar(50) NOT NULL, `login_footer` varchar(100) NOT NULL, `register_footer` varchar(100) NOT NULL, `login_redirection` text NOT NULL, `register_redirection` text NOT NULL, `status` int(1) NOT NULL, `firstname` int(1) NOT NULL, `lastname` int(1) NOT NULL, `customergroup` int(1) NOT NULL, `customergroupi` varchar(50) NOT NULL, `customergroupr` int(1) NOT NULL, `telephone` int(1) NOT NULL, `fax` int(1) NOT NULL, `newsletter` int(1) NOT NULL, `company` int(1) NOT NULL, `address_1` int(1) NOT NULL, `address_2` int(1) NOT NULL, `city` int(1) NOT NULL, `postcode` int(1) NOT NULL, `zone` int(1) NOT NULL, `country` int(1) NOT NULL, `firstnamei` varchar(50) NOT NULL, `lastnamei` varchar(50) NOT NULL, `telephonei` varchar(50) NOT NULL, `faxi` varchar(50) NOT NULL, `newsletteri` varchar(50) NOT NULL, `companyi` varchar(50) NOT NULL, `address_1i` varchar(50) NOT NULL, `address_2i` varchar(50) NOT NULL, `cityi` varchar(50) NOT NULL, `postcodei` varchar(50) NOT NULL, `zonei` varchar(50) NOT NULL, `countryi` varchar(50) NOT NULL, `firstnamer` int(1) NOT NULL, `lastnamer` int(1) NOT NULL, `telephoner` int(1) NOT NULL, `faxr` int(1) NOT NULL, `newsletterr` int(1) NOT NULL, `companyr` int(1) NOT NULL, `address_1r` int(1) NOT NULL, `address_2r` int(1) NOT NULL, `cityr` int(1) NOT NULL, `postcoder` int(1) NOT NULL, `zoner` int(1) NOT NULL, `countryr` int(1) NOT NULL, `google_login_client_id` varchar(255) NOT NULL, `google_login_client_secret` varchar(255) NOT NULL, `google_login_callback_url` varchar(255) NOT NULL, `google_login_status` int(1) NOT NULL, `googleloginbuttontext` varchar(50) NOT NULL, `facebookloginbuttontext` varchar(50) NOT NULL, `ortext` varchar(50) NOT NULL, `facebookappid` varchar(100) NOT NULL, `facebookappsecret` varchar(100) NOT NULL, `facebook_login_status` int(1) NOT NULL, `facebook_login_callback_url` varchar(255) NOT NULL, PRIMARY KEY (`id`) ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8");
+
+		$db=$this->db->query("SELECT id FROM opencartweb_login_popup")->row;
+		if (isset($db['id'])!=1) {
+		$this->db->query("INSERT INTO opencartweb_login_popup (`id`, `login_text`, `login_url`, `register_url`, `remember_me_text`, `forgotten_text`, `login_footer`, `register_footer`, `login_redirection`, `register_redirection`, `status`, `firstname`, `lastname`, `customergroup`, `customergroupi`, `customergroupr`, `telephone`, `fax`, `newsletter`, `company`, `address_1`, `address_2`, `city`, `postcode`, `zone`, `country`, `firstnamei`, `lastnamei`, `telephonei`, `faxi`, `newsletteri`, `companyi`, `address_1i`, `address_2i`, `cityi`, `postcodei`, `zonei`, `countryi`, `firstnamer`, `lastnamer`, `telephoner`, `faxr`, `newsletterr`, `companyr`, `address_1r`, `address_2r`, `cityr`, `postcoder`, `zoner`, `countryr`, `google_login_client_id`, `google_login_client_secret`, `google_login_callback_url`, `google_login_status`, `googleloginbuttontext`, `facebookloginbuttontext`, `ortext`, `facebookappid`, `facebookappsecret`, `facebook_login_status`, `facebook_login_callback_url`) VALUES (1, 'Customer Login', 'index.php?route=account/login', 'index.php?route=account/register', 'Remember Me', 'Forgotten Password', 'Do Not Have An Account ?', 'I am a returning customer !', 'index.php?route=account/account', 'index.php?route=account/account', 0, 1, 1, 0, 'fa-address-book', 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'fa-address-book-o', 'fa-user', 'fa-phone-square', 'fa-fax', 'fa-newspaper-o', 'fa-briefcase', 'fa-address-card', 'fa-address-book-o', 'fa-themeisle', 'fa-spotify', 'fa-star', 'fa-codepen', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '', '', 'index.php?route=loginmodule/googlelogin', 0, 'Google Login', 'Facebook Login', 'Or Login', '', '', 0, 'index.php?route=loginmodule/facebooklogin/login');");
+		}
+		$this->load->language('common/footer');
+
+		$data['text_footer'] = $this->language->get('text_footer');
+
+		if ($this->user->isLogged() && isset($this->request->get['token']) && ($this->request->get['token'] == $this->session->data['token'])) {
+			$data['text_version'] = sprintf($this->language->get('text_version'), VERSION);
+		} else {
+			$data['text_version'] = '';
+		}
+		
+		return $this->load->view('common/footer', $data);
+	}
+}

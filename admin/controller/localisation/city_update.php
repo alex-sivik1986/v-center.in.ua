@@ -1,0 +1,254 @@
+<?php
+class ControllerLocalisationCityUpdate extends Controller {
+	private $error = array();
+    protected static $api_key = '15996ddd3cbaabd4b8cd0b0f42cdfff6'; // персональный api key
+	public function index() {
+		$this->load->language('localisation/city_update');
+
+		$this->document->setTitle($this->language->get('heading_title'));
+
+		//$this->load->model('localisation/city_update');
+
+		//$this->getList();
+		$this->rebuildCountries(); // области
+        $this->addZones();  // города
+        $this->addCities(); // отделения
+		
+		
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'name';
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'ASC';
+		}
+
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		}
+
+		$url = '';
+
+		if (isset($this->request->get['sort'])) {
+			$url .= '&sort=' . $this->request->get['sort'];
+		}
+
+		if (isset($this->request->get['order'])) {
+			$url .= '&order=' . $this->request->get['order'];
+		}
+
+		if (isset($this->request->get['page'])) {
+			$url .= '&page=' . $this->request->get['page'];
+		}
+
+		$data['breadcrumbs'] = array();
+
+		$data['breadcrumbs'][] = array(
+			'text'		=> $this->language->get('text_home'),
+			'href'		=> $this->url->link('common/home', 'token=' . $this->session->data['token'], true)
+		);
+
+		$data['breadcrumbs'][] = array(
+			'text'		=> $this->language->get('heading_title'),
+			'href'		=> $this->url->link('localisation/city_update', 'token=' . $this->session->data['token'] . $url, 'SSL')
+		);
+
+		$data['back'] = $this->url->link('localisation/city', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['heading_title'] = $this->language->get('heading_title');
+        $data['text_success'] = $this->language->get('text_success');
+        $data['button_back'] = $this->language->get('button_back');
+		
+        $data['token'] = $this->session->data['token'];
+
+		$data['header'] = $this->load->controller('common/header');
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['footer'] = $this->load->controller('common/footer');
+
+		$this->response->setOutput($this->load->view('localisation/city_update_list', $data));
+	}
+    
+	
+	public function rebuildCountries()
+    {
+        $params = [
+            'modelName' => 'Address',
+            'calledMethod' => 'getAreas',
+            'methodProperties' => [
+                'Language' => 'ru'
+            ],
+            'apiKey' => self::$api_key
+        ];
+        $areas = self::getApiData($params);
+        if (!empty($areas)) {
+            $query = $this->db->query("DROP TABLE `" . DB_PREFIX . "country`");
+            $query = $this->db->query("CREATE TABLE `" . DB_PREFIX . "country` (`country_id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(128) NOT NULL, `iso_code_2` varchar(2) NOT NULL, `iso_code_3` varchar(3) NOT NULL, `address_format` text NOT NULL, `postcode_required` tinyint(1) NOT NULL,  `status` tinyint(1) NOT NULL DEFAULT '1', `ref` varchar(50), PRIMARY KEY (`country_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;");
+            $insert = '';
+            $count_areas = count($areas);
+            for ($i = 0; $i < $count_areas; $i++) {
+                if ($i === 0) {
+                    continue;
+                }
+                $id = $i+300000; // id как в модуле opencart2x(webmakers)
+                $insert .= "({$id},	'{$areas[$i]['Description']}',	'UA',	'UKR',	'',	0,	1,	'{$areas[$i]['Ref']}')";
+                if ($i+1 !== $count_areas) {
+                    $insert .= ',';
+                }
+            }
+            $this->db->query("INSERT INTO `" . DB_PREFIX . "country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `address_format`, `postcode_required`, `status`, `ref`) VALUES {$insert}");
+        }
+    }
+    public function addZones()
+    {
+        $params = [
+            'modelName' => 'Address',
+            'calledMethod' => 'getCities',
+            'apiKey' => self::$api_key
+        ];
+        $zones = self::getApiData($params);
+		
+        if (!empty($zones)) {
+            //$query = $this->db->query("DELETE FROM `" . DB_PREFIX . "zone`");
+            $insert = '';
+            $count_zones = count($zones);
+            for ($i = 0; $i < $count_zones; $i++) {
+                $current = $this->db->query("SELECT * FROM `" . DB_PREFIX . "zone` WHERE `code` = '{$zones[$i]['CityID']}' LIMIT 1");
+                if ($current->num_rows > 0) {
+                    if ($current->row['ref'] === null) {
+                        $this->db->query("UPDATE `" . DB_PREFIX . "zone` SET `ref` = '{$zones[$i]['Ref']}' WHERE `code` = '{$zones[$i]['CityID']}';");
+                    }
+                    continue;
+                }
+                $country = $this->db->query("SELECT `country_id` FROM `" . DB_PREFIX . "country` WHERE `ref` = '{$zones[$i]['Area']}' LIMIT 1");
+                $country_id = (int)$country->row['country_id'];
+                $insert .= "({$country_id}, '{$zones[$i]['DescriptionRu']}', '{$zones[$i]['CityID']}', 1, '{$zones[$i]['Ref']}')";
+                if ($i+1 != $count_zones) {
+                    $insert .= ','; 
+                }
+            }
+			$insert = rtrim($insert, ',');
+			
+            if (strlen($insert) > 0) {
+                $this->db->query("INSERT INTO `" . DB_PREFIX . "zone` (`country_id`, `name`, `code`, `status`, `ref`) VALUES {$insert}");
+            }
+        }
+    }
+    public function addCities()
+    {
+        $params = [
+            'modelName' => 'Address',
+            'calledMethod' => 'getWarehouses',
+            'apiKey' => self::$api_key
+        ];
+        $cities = self::getApiData($params);
+		
+        if (!empty($cities)) {
+            //$query = $this->db->query("DELETE FROM `" . DB_PREFIX . "city`");
+            $insert = '';
+            $count_cities = count($cities);
+            for ($i = 0; $i < $count_cities; $i++) {
+                $current = $this->db->query("SELECT * FROM `" . DB_PREFIX . "city` WHERE `code` = '{$cities[$i]['SiteKey']}' LIMIT 1");
+                if ($current->num_rows > 0) {
+                    continue;
+                }
+                $zone = $this->db->query("SELECT `zone_id` FROM `" . DB_PREFIX . "zone` WHERE `ref` = '{$cities[$i]['CityRef']}' LIMIT 1");
+                $zone_id = (int)$zone->row['zone_id'];
+                $insert .= "({$zone_id}, '{$cities[$i]['DescriptionRu']}',	1,  '{$cities[$i]['SiteKey']}',	1)";
+                if ($i+1 != $count_cities) {
+                    $insert .= ',';
+                }
+            }
+			
+			$insert = rtrim($insert, ',');
+            if (strlen($insert) > 0) {
+                $this->db->query("INSERT INTO `" . DB_PREFIX . "city` (`zone_id`, `name`, `status`, `code`, `sort_order`) VALUES {$insert}");
+            }
+        }
+    }
+    protected static function getApiData($params)
+    {
+        $ch = curl_init('https://api.novaposhta.ua/v2.0/json/');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+        // Submit the POST request
+        $result = json_decode(curl_exec($ch), true);
+        // Close cURL session handle
+        curl_close($ch);
+        if ($result['success'] === true) {
+            return $result['data'];
+        }
+        return [];
+    }
+	
+	
+	protected function getList() {
+		// Check database
+		$this->model_localisation_city_update->checkDatabase();
+		// Check database
+		
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'name';
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'ASC';
+		}
+
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		}
+
+		$url = '';
+
+		if (isset($this->request->get['sort'])) {
+			$url .= '&sort=' . $this->request->get['sort'];
+		}
+
+		if (isset($this->request->get['order'])) {
+			$url .= '&order=' . $this->request->get['order'];
+		}
+
+		if (isset($this->request->get['page'])) {
+			$url .= '&page=' . $this->request->get['page'];
+		}
+
+		$data['breadcrumbs'] = array();
+
+		$data['breadcrumbs'][] = array(
+			'text'		=> $this->language->get('text_home'),
+			'href'		=> $this->url->link('common/home', 'token=' . $this->session->data['token'], true)
+		);
+
+		$data['breadcrumbs'][] = array(
+			'text'		=> $this->language->get('heading_title'),
+			'href'		=> $this->url->link('localisation/city_update', 'token=' . $this->session->data['token'] . $url, 'SSL')
+		);
+
+		$data['back'] = $this->url->link('localisation/city', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['heading_title'] = $this->language->get('heading_title');
+        $data['text_success'] = $this->language->get('text_success');
+        $data['button_back'] = $this->language->get('button_back');
+		
+        $data['token'] = $this->session->data['token'];
+
+		$data['header'] = $this->load->controller('common/header');
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['footer'] = $this->load->controller('common/footer');
+
+		$this->response->setOutput($this->load->view('localisation/city_update_list', $data));
+	}
+}

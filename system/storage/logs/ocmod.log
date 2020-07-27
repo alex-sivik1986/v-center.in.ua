@@ -1,0 +1,2238 @@
+2019-12-18 12:35:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 834
+LINE: 1213
+LINE: 1588
+CODE: public function history() {
+LINE: 2191
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 337
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+
+FILE: catalog/view/theme/theme_vcenter/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'localisation/geo_zone')) {
+LINE: 557
+
+FILE: admin/language/en-gb/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ru-ru/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ua/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/controller/marketing/affiliate.php
+CODE: public function transaction() {
+LINE: 1170
+
+FILE: admin/view/template/marketing/affiliate_form.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
+LINE: 148
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 200
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 376
+CODE: $('select[name=\'country_id\']').trigger('change');
+LINE: 424
+CODE: public function history() {
+LINE: 2214
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/account/address.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 432
+
+FILE: catalog/controller/account/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 255
+
+FILE: catalog/controller/affiliate/edit.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 227
+
+FILE: catalog/controller/affiliate/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 235
+CODE: protected function validateDelete() {
+LINE: 566
+CODE: public function customfield() {
+LINE: 478
+CODE: public function country() {
+LINE: 337
+CODE: public function country() {
+LINE: 458
+
+FILE: catalog/view/theme/default/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/theme_vcenter/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/theme_vcenter/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/default/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/default/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/controller/checkout/guest.php
+CODE: if (isset($this->session->data['payment_address']['city'])) {
+LINE: 115
+
+FILE: catalog/controller/checkout/guest_shipping.php
+CODE: if (isset($this->session->data['shipping_address']['city'])) {
+LINE: 62
+
+FILE: catalog/controller/checkout/payment_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 53
+LINE: 146
+
+FILE: catalog/controller/checkout/register.php
+CODE: $this->load->model('localisation/country');
+LINE: 73
+LINE: 178
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 58
+LINE: 156
+CODE: if (isset($this->session->data['payment_address']['zone_id'])) {
+LINE: 47
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 144
+CODE: $data['cities'] = $this->model_localisation_city->getCities();
+LINE: 65
+LINE: 167
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 69
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 176
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 54
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 154
+CODE: public function customfield() {
+LINE: 222
+
+FILE: catalog/view/theme/default/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/default/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/default/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+
+FILE: catalog/view/theme/default/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 342
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 393
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 398
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 449
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+
+FILE: catalog/controller/api/payment.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 46
+
+FILE: catalog/controller/api/shipping.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 47
+----------------------------------------------------------------
+MOD: OCMOD Editor for OpenCart 2.2 and 2.3
+
+FILE: admin/controller/extension/modification.php
+CODE: $data['refresh'] = $this->url->link('extension/modification/refresh', 'token=' . $this->session->data['token'] . $url, true);
+LINE: 660
+CODE: $data['modifications'][] = array(
+LINE: 682
+CODE: $data['tab_log'] = $this->language->get('tab_log');
+LINE: 727
+CODE: $this->response->redirect($this->url->link('extension/modification', 'token=' . $this->session->data['token'] . $url, true));
+LINE: 510
+
+FILE: admin/view/template/extension/modification.tpl
+CODE: <div class="pull-right">
+LINE: 5
+CODE: <?php if (!$modification['enabled']) { ?>
+LINE: 98
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['languages']
+LINE: 822
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 419
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 397
+
+FILE: admin/view/template/common/header.tpl
+CODE: </head>
+LINE: 36
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 56
+CODE: var attribute_row = <?php echo $attribute_row; ?>;
+LINE: 1218
+CODE: name="product_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 66
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 103
+CODE: name="keyword"
+LINE: 300
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 311
+CODE: name="category_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 78
+CODE: name="keyword"
+LINE: 166
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 262
+
+FILE: admin/view/template/catalog/manufacturer_form.tpl
+CODE: <?php echo $column_left; ?>
+LINE: 12
+CODE: <?php echo $footer; ?>
+LINE: 181
+CODE: name="name"
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 356
+LINE: 393
+LINE: 426
+CODE: name="information_description[<?php echo $language['language_id']; ?>][title]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 85
+CODE: name="keyword"
+LINE: 243
+----------------------------------------------------------------
+MOD: Opencart News 2.3.x
+CODE: if ($this->user->hasPermission('access', 'catalog/information')) {
+LINE: 146
+CODE: $_['text_manufacturer']
+LINE: 36
+CODE: $_['text_manufacturer']
+LINE: 36
+----------------------------------------------------------------
+MOD: |Quickfix by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'extension/installer/ftp'
+LINE: 131
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('ftp', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('localcopy', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: Opencart News Seo Url fix OC 2.3
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 114
+CODE: case 'information_id':
+LINE: 203
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: $url = explode('=', $query->row['query']);
+LINE: 24
+CODE: $url[0] != 'information_id' &&
+LINE: 46
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 63
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 85
+----------------------------------------------------------------
+MOD: POPUP LOGIN for OpenCart 2-3
+
+FILE: admin/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 9
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->model('catalog/information');
+LINE: 237
+----------------------------------------------------------------
+MOD: Store Reviews 
+CODE: if ($this->user->hasPermission('access', 'catalog/review'))
+LINE: 136
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 991
+
+FILE: admin/view/template/setting/setting.tpl
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 365
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 49
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 1404
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ua/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+----------------------------------------------------------------
+2020-01-15 15:14:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 834
+LINE: 1213
+LINE: 1588
+CODE: public function history() {
+LINE: 2191
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 337
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+
+FILE: catalog/view/theme/theme_vcenter/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'localisation/geo_zone')) {
+LINE: 557
+
+FILE: admin/language/en-gb/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ru-ru/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ua/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/controller/marketing/affiliate.php
+CODE: public function transaction() {
+LINE: 1170
+
+FILE: admin/view/template/marketing/affiliate_form.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
+LINE: 148
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 200
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 376
+CODE: $('select[name=\'country_id\']').trigger('change');
+LINE: 424
+CODE: public function history() {
+LINE: 2214
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/account/address.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 432
+
+FILE: catalog/controller/account/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 255
+
+FILE: catalog/controller/affiliate/edit.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 227
+
+FILE: catalog/controller/affiliate/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 235
+CODE: protected function validateDelete() {
+LINE: 566
+CODE: public function customfield() {
+LINE: 478
+CODE: public function country() {
+LINE: 337
+CODE: public function country() {
+LINE: 458
+
+FILE: catalog/view/theme/default/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/theme_vcenter/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/theme_vcenter/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/default/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/default/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/controller/checkout/guest.php
+CODE: if (isset($this->session->data['payment_address']['city'])) {
+LINE: 115
+
+FILE: catalog/controller/checkout/guest_shipping.php
+CODE: if (isset($this->session->data['shipping_address']['city'])) {
+LINE: 62
+
+FILE: catalog/controller/checkout/payment_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 53
+LINE: 146
+
+FILE: catalog/controller/checkout/register.php
+CODE: $this->load->model('localisation/country');
+LINE: 73
+LINE: 178
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 58
+LINE: 156
+CODE: if (isset($this->session->data['payment_address']['zone_id'])) {
+LINE: 47
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 144
+CODE: $data['cities'] = $this->model_localisation_city->getCities();
+LINE: 65
+LINE: 167
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 69
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 176
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 54
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 154
+CODE: public function customfield() {
+LINE: 222
+
+FILE: catalog/view/theme/default/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/default/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/default/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+
+FILE: catalog/view/theme/default/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 342
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 393
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 398
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 449
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+
+FILE: catalog/controller/api/payment.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 46
+
+FILE: catalog/controller/api/shipping.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 47
+----------------------------------------------------------------
+MOD: OCMOD Editor for OpenCart 2.2 and 2.3
+
+FILE: admin/controller/extension/modification.php
+CODE: $data['refresh'] = $this->url->link('extension/modification/refresh', 'token=' . $this->session->data['token'] . $url, true);
+LINE: 660
+CODE: $data['modifications'][] = array(
+LINE: 682
+CODE: $data['tab_log'] = $this->language->get('tab_log');
+LINE: 727
+CODE: $this->response->redirect($this->url->link('extension/modification', 'token=' . $this->session->data['token'] . $url, true));
+LINE: 510
+
+FILE: admin/view/template/extension/modification.tpl
+CODE: <div class="pull-right">
+LINE: 5
+CODE: <?php if (!$modification['enabled']) { ?>
+LINE: 98
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['languages']
+LINE: 822
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 419
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 397
+
+FILE: admin/view/template/common/header.tpl
+CODE: </head>
+LINE: 36
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 56
+CODE: var attribute_row = <?php echo $attribute_row; ?>;
+LINE: 1218
+CODE: name="product_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 66
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 103
+CODE: name="keyword"
+LINE: 300
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 311
+CODE: name="category_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 78
+CODE: name="keyword"
+LINE: 166
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 262
+
+FILE: admin/view/template/catalog/manufacturer_form.tpl
+CODE: <?php echo $column_left; ?>
+LINE: 12
+CODE: <?php echo $footer; ?>
+LINE: 181
+CODE: name="name"
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 356
+LINE: 393
+LINE: 426
+CODE: name="information_description[<?php echo $language['language_id']; ?>][title]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 85
+CODE: name="keyword"
+LINE: 243
+----------------------------------------------------------------
+MOD: Opencart News 2.3.x
+CODE: if ($this->user->hasPermission('access', 'catalog/information')) {
+LINE: 146
+CODE: $_['text_manufacturer']
+LINE: 36
+CODE: $_['text_manufacturer']
+LINE: 36
+----------------------------------------------------------------
+MOD: |Quickfix by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'extension/installer/ftp'
+LINE: 131
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('ftp', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('localcopy', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: Opencart News Seo Url fix OC 2.3
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 114
+CODE: case 'information_id':
+LINE: 203
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: $url = explode('=', $query->row['query']);
+LINE: 24
+CODE: $url[0] != 'information_id' &&
+LINE: 46
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 63
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 85
+----------------------------------------------------------------
+MOD: POPUP LOGIN for OpenCart 2-3
+
+FILE: admin/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 9
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->model('catalog/information');
+LINE: 237
+----------------------------------------------------------------
+MOD: Store Reviews 
+CODE: if ($this->user->hasPermission('access', 'catalog/review'))
+LINE: 136
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 991
+
+FILE: admin/view/template/setting/setting.tpl
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 365
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 49
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 1404
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ua/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+----------------------------------------------------------------
+MOD: Bitrix24 Leads for OpenCart 2
+CODE: if (isset($this->request->post['config_product_count'])) {
+LINE: 692
+CODE: <li><a href="#tab-server"
+LINE: 41
+CODE: <div class="tab-pane" id="tab-server">
+LINE: 1343
+CODE: return $order_id;
+LINE: 134
+----------------------------------------------------------------
+2020-06-23 14:25:15 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 834
+LINE: 1213
+LINE: 1588
+CODE: public function history() {
+LINE: 2191
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 337
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+
+FILE: catalog/view/theme/theme_vcenter/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'localisation/geo_zone')) {
+LINE: 557
+
+FILE: admin/language/en-gb/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ru-ru/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ua/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/controller/marketing/affiliate.php
+CODE: public function transaction() {
+LINE: 1170
+
+FILE: admin/view/template/marketing/affiliate_form.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
+LINE: 148
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 200
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 376
+CODE: $('select[name=\'country_id\']').trigger('change');
+LINE: 424
+CODE: public function history() {
+LINE: 2214
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/account/address.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 432
+
+FILE: catalog/controller/account/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 255
+
+FILE: catalog/controller/affiliate/edit.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 227
+
+FILE: catalog/controller/affiliate/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 235
+CODE: protected function validateDelete() {
+LINE: 566
+CODE: public function customfield() {
+LINE: 478
+CODE: public function country() {
+LINE: 337
+CODE: public function country() {
+LINE: 458
+
+FILE: catalog/view/theme/default/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/theme_vcenter/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/theme_vcenter/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/default/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/default/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/controller/checkout/guest.php
+CODE: if (isset($this->session->data['payment_address']['city'])) {
+LINE: 115
+
+FILE: catalog/controller/checkout/guest_shipping.php
+CODE: if (isset($this->session->data['shipping_address']['city'])) {
+LINE: 62
+
+FILE: catalog/controller/checkout/payment_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 53
+LINE: 146
+
+FILE: catalog/controller/checkout/register.php
+CODE: $this->load->model('localisation/country');
+LINE: 73
+LINE: 178
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 58
+LINE: 156
+CODE: if (isset($this->session->data['payment_address']['zone_id'])) {
+LINE: 47
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 144
+CODE: $data['cities'] = $this->model_localisation_city->getCities();
+LINE: 65
+LINE: 167
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 69
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 176
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 54
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 154
+CODE: public function customfield() {
+LINE: 222
+
+FILE: catalog/view/theme/default/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/default/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/default/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+
+FILE: catalog/view/theme/default/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 342
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 393
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 398
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 449
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+
+FILE: catalog/controller/api/payment.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 46
+
+FILE: catalog/controller/api/shipping.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 47
+----------------------------------------------------------------
+MOD: OCMOD Editor for OpenCart 2.2 and 2.3
+
+FILE: admin/controller/extension/modification.php
+CODE: $data['refresh'] = $this->url->link('extension/modification/refresh', 'token=' . $this->session->data['token'] . $url, true);
+LINE: 660
+CODE: $data['modifications'][] = array(
+LINE: 682
+CODE: $data['tab_log'] = $this->language->get('tab_log');
+LINE: 727
+CODE: $this->response->redirect($this->url->link('extension/modification', 'token=' . $this->session->data['token'] . $url, true));
+LINE: 510
+
+FILE: admin/view/template/extension/modification.tpl
+CODE: <div class="pull-right">
+LINE: 5
+CODE: <?php if (!$modification['enabled']) { ?>
+LINE: 98
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['languages']
+LINE: 822
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 419
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 397
+
+FILE: admin/view/template/common/header.tpl
+CODE: </head>
+LINE: 36
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 56
+CODE: var attribute_row = <?php echo $attribute_row; ?>;
+LINE: 1218
+CODE: name="product_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 66
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 103
+CODE: name="keyword"
+LINE: 300
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 311
+CODE: name="category_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 78
+CODE: name="keyword"
+LINE: 166
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 262
+
+FILE: admin/view/template/catalog/manufacturer_form.tpl
+CODE: <?php echo $column_left; ?>
+LINE: 12
+CODE: <?php echo $footer; ?>
+LINE: 181
+CODE: name="name"
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 356
+LINE: 393
+LINE: 426
+CODE: name="information_description[<?php echo $language['language_id']; ?>][title]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 85
+CODE: name="keyword"
+LINE: 243
+----------------------------------------------------------------
+MOD: Opencart News 2.3.x
+CODE: if ($this->user->hasPermission('access', 'catalog/information')) {
+LINE: 146
+CODE: $_['text_manufacturer']
+LINE: 36
+CODE: $_['text_manufacturer']
+LINE: 36
+----------------------------------------------------------------
+MOD: |Quickfix by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'extension/installer/ftp'
+LINE: 131
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('ftp', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('localcopy', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: Opencart News Seo Url fix OC 2.3
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 114
+CODE: case 'information_id':
+LINE: 203
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: $url = explode('=', $query->row['query']);
+LINE: 24
+CODE: $url[0] != 'information_id' &&
+LINE: 46
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 63
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 85
+----------------------------------------------------------------
+MOD: POPUP LOGIN for OpenCart 2-3
+
+FILE: admin/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 9
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->model('catalog/information');
+LINE: 237
+----------------------------------------------------------------
+MOD: Store Reviews 
+CODE: if ($this->user->hasPermission('access', 'catalog/review'))
+LINE: 136
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 991
+
+FILE: admin/view/template/setting/setting.tpl
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 365
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 49
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 1404
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ua/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+----------------------------------------------------------------
+MOD: Bitrix24 Leads for OpenCart 2
+CODE: if (isset($this->request->post['config_product_count'])) {
+LINE: 692
+CODE: <li><a href="#tab-server"
+LINE: 41
+CODE: <div class="tab-pane" id="tab-server">
+LINE: 1343
+CODE: return $order_id;
+LINE: 134
+----------------------------------------------------------------
+2020-06-23 14:32:26 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 41
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 49
+LINE: 108
+LINE: 120
+LINE: 165
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 38
+LINE: 40
+LINE: 49
+LINE: 51
+LINE: 60
+LINE: 62
+
+FILE: system/library/template/php.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/tiwg.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 24
+----------------------------------------------------------------
+MOD: fondy_payment
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 11
+
+FILE: catalog/view/theme/default/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+LINE: 26
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: OcStore 2.3.x track number
+
+FILE: admin/controller/sale/order.php
+CODE: $data['shipping_method'] = $order_info['shipping_method'];
+LINE: 834
+LINE: 1213
+LINE: 1588
+CODE: public function history() {
+LINE: 2191
+
+FILE: admin/model/sale/order.php
+CODE: $order_query->row['order_id'],
+LINE: 96
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_query->row['order_id'],
+LINE: 170
+
+FILE: admin/view/template/sale/order_info.tpl
+CODE: <td><?php echo $text_reward; ?></td>
+LINE: 100
+CODE: <?php echo $footer; ?>
+LINE: 700
+
+FILE: catalog/model/account/order.php
+CODE: $order_query->row['order_id'],
+LINE: 46
+
+FILE: catalog/controller/account/order.php
+CODE: if ($order_info['invoice_no']) {
+LINE: 337
+
+FILE: catalog/view/theme/default/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+
+FILE: catalog/view/theme/theme_vcenter/template/account/order_info.tpl
+CODE: <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
+LINE: 49
+----------------------------------------------------------------
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'localisation/geo_zone')) {
+LINE: 557
+
+FILE: admin/language/en-gb/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ru-ru/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/language/ua/common/column_left.php
+REGEX: (.*text_country.*)
+LINE: 11
+REGEX: (.*text_zone.*)
+LINE: 84
+REGEX: (.*text_coupon.*)
+LINE: 12
+
+FILE: admin/controller/marketing/affiliate.php
+CODE: public function transaction() {
+LINE: 1170
+
+FILE: admin/view/template/marketing/affiliate_form.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
+LINE: 148
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 200
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 376
+CODE: $('select[name=\'country_id\']').trigger('change');
+LINE: 424
+CODE: public function history() {
+LINE: 2214
+
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/account/address.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 432
+
+FILE: catalog/controller/account/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 255
+
+FILE: catalog/controller/affiliate/edit.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 227
+
+FILE: catalog/controller/affiliate/register.php
+CODE: if (isset($this->request->post['city'])) {
+LINE: 235
+CODE: protected function validateDelete() {
+LINE: 566
+CODE: public function customfield() {
+LINE: 478
+CODE: public function country() {
+LINE: 337
+CODE: public function country() {
+LINE: 458
+
+FILE: catalog/view/theme/default/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/theme_vcenter/template/account/address_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 59
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 105
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 418
+CODE: <?php echo $footer; ?>
+LINE: 471
+
+FILE: catalog/view/theme/default/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/theme_vcenter/template/account/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 264
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 310
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 707
+CODE: <?php echo $footer; ?>
+LINE: 760
+
+FILE: catalog/view/theme/default/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/edit.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 96
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 142
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 195
+CODE: <?php echo $footer; ?>
+LINE: 248
+
+FILE: catalog/view/theme/default/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/view/theme/theme_vcenter/template/affiliate/register.tpl
+CODE: <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
+LINE: 98
+CODE: <div class="text-danger"><?php echo $error_zone; ?></div>
+LINE: 144
+CODE: $('select[name=\'zone_id\']').html(html);
+LINE: 317
+CODE: <?php echo $footer; ?>
+LINE: 379
+
+FILE: catalog/controller/checkout/guest.php
+CODE: if (isset($this->session->data['payment_address']['city'])) {
+LINE: 115
+
+FILE: catalog/controller/checkout/guest_shipping.php
+CODE: if (isset($this->session->data['shipping_address']['city'])) {
+LINE: 62
+
+FILE: catalog/controller/checkout/payment_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 53
+LINE: 146
+
+FILE: catalog/controller/checkout/register.php
+CODE: $this->load->model('localisation/country');
+LINE: 73
+LINE: 178
+
+FILE: catalog/controller/checkout/shipping_address.php
+CODE: $this->load->model('localisation/country');
+LINE: 58
+LINE: 156
+CODE: if (isset($this->session->data['payment_address']['zone_id'])) {
+LINE: 47
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 144
+CODE: $data['cities'] = $this->model_localisation_city->getCities();
+LINE: 65
+LINE: 167
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 69
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 176
+CODE: if (isset($this->session->data['shipping_address']['zone_id'])) {
+LINE: 54
+CODE: if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+LINE: 154
+CODE: public function customfield() {
+LINE: 222
+
+FILE: catalog/view/theme/default/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 166
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 196
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/default/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 500
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 551
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/payment_address.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 343
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 394
+
+FILE: catalog/view/theme/default/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/register.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+LINE: 483
+CODE: $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+LINE: 534
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+LINE: 28
+CODE: <select name="zone_id" id="input-shipping-zone" class="form-control">
+LINE: 66
+
+FILE: catalog/view/theme/default/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/theme_vcenter/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 327
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 378
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 342
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 393
+CODE: $('#collapse-shipping-address select[name=\'zone_id\']').html(html);
+LINE: 398
+CODE: $('#collapse-shipping-address select[name=\'country_id\']').trigger('change');
+LINE: 449
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 53
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 91
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+CODE: <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+LINE: 161
+CODE: <select name="zone_id" id="input-payment-zone" class="form-control">
+LINE: 191
+
+FILE: catalog/controller/api/payment.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 46
+
+FILE: catalog/controller/api/shipping.php
+CODE: if ((utf8_strlen($this->request->post['city']) < 2) || (utf8_strlen($this->request->post['city']) > 32)) {
+LINE: 47
+----------------------------------------------------------------
+MOD: OCMOD Editor for OpenCart 2.2 and 2.3
+
+FILE: admin/controller/extension/modification.php
+CODE: $data['refresh'] = $this->url->link('extension/modification/refresh', 'token=' . $this->session->data['token'] . $url, true);
+LINE: 660
+CODE: $data['modifications'][] = array(
+LINE: 682
+CODE: $data['tab_log'] = $this->language->get('tab_log');
+LINE: 727
+CODE: $this->response->redirect($this->url->link('extension/modification', 'token=' . $this->session->data['token'] . $url, true));
+LINE: 510
+
+FILE: admin/view/template/extension/modification.tpl
+CODE: <div class="pull-right">
+LINE: 5
+CODE: <?php if (!$modification['enabled']) { ?>
+LINE: 98
+----------------------------------------------------------------
+MOD: Auto URL amigável Admin
+
+FILE: admin/controller/catalog/product.php
+CODE: $data['languages']
+LINE: 822
+
+FILE: admin/controller/catalog/category.php
+CODE: $data['languages']
+LINE: 419
+
+FILE: admin/controller/catalog/information.php
+CODE: $data['languages']
+LINE: 397
+
+FILE: admin/view/template/common/header.tpl
+CODE: </head>
+LINE: 36
+
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 56
+CODE: var attribute_row = <?php echo $attribute_row; ?>;
+LINE: 1218
+CODE: name="product_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 66
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 103
+CODE: name="keyword"
+LINE: 300
+
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 311
+CODE: name="category_description[<?php echo $language['language_id']; ?>][name]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 78
+CODE: name="keyword"
+LINE: 166
+
+FILE: admin/controller/catalog/manufacturer.php
+CODE: protected function getForm() {
+LINE: 262
+
+FILE: admin/view/template/catalog/manufacturer_form.tpl
+CODE: <?php echo $column_left; ?>
+LINE: 12
+CODE: <?php echo $footer; ?>
+LINE: 181
+CODE: name="name"
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <?php foreach ($languages as $language) { ?>
+LINE: 47
+CODE: <script type="text/javascript">
+LINE: 356
+LINE: 393
+LINE: 426
+CODE: name="information_description[<?php echo $language['language_id']; ?>][title]"
+LINE: 57
+CODE: id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control"
+LINE: 85
+CODE: name="keyword"
+LINE: 243
+----------------------------------------------------------------
+MOD: Opencart News 2.3.x
+CODE: if ($this->user->hasPermission('access', 'catalog/information')) {
+LINE: 146
+CODE: $_['text_manufacturer']
+LINE: 36
+CODE: $_['text_manufacturer']
+LINE: 36
+----------------------------------------------------------------
+MOD: |Quickfix by iSenseLabs
+
+FILE: admin/controller/extension/installer.php
+CODE: 'extension/installer/ftp'
+LINE: 131
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('ftp', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/'. $this->rewrite_step('localcopy', 'localremove'), 'token=' . $this->session->data['token'],
+NOT FOUND - OPERATION SKIPPED!
+CODE: public function unzip() {
+LINE: 292
+----------------------------------------------------------------
+MOD: Opencart News Seo Url fix OC 2.3
+
+FILE: catalog/controller/startup/seo_pro.php
+CODE: $this->request->get['route'] = 'information/information';
+LINE: 114
+CODE: case 'information_id':
+LINE: 203
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: $url = explode('=', $query->row['query']);
+LINE: 24
+CODE: $url[0] != 'information_id' &&
+LINE: 46
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 63
+CODE: ($data['route'] == 'information/information' && $key == 'information_id')
+LINE: 85
+----------------------------------------------------------------
+MOD: POPUP LOGIN for OpenCart 2-3
+
+FILE: admin/controller/common/footer.php
+CODE: $this->load->language('common/footer');
+LINE: 9
+
+FILE: catalog/controller/common/footer.php
+CODE: $this->load->model('catalog/information');
+LINE: 237
+----------------------------------------------------------------
+MOD: Store Reviews 
+CODE: if ($this->user->hasPermission('access', 'catalog/review'))
+LINE: 136
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['captcha_pages'] = array();
+LINE: 991
+
+FILE: admin/view/template/setting/setting.tpl
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 365
+CODE: $data['heading_title'] = $this->language->get('heading_title');
+LINE: 49
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 1404
+
+FILE: admin/language/en-gb/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ru-ru/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+
+FILE: admin/language/ua/setting/setting.php
+CODE: $_['heading_title']
+LINE: 9
+----------------------------------------------------------------
+MOD: Bitrix24 Leads for OpenCart 2
+CODE: if (isset($this->request->post['config_product_count'])) {
+LINE: 692
+CODE: <li><a href="#tab-server"
+LINE: 41
+CODE: <div class="tab-pane" id="tab-server">
+LINE: 1343
+CODE: return $order_id;
+LINE: 134
+----------------------------------------------------------------

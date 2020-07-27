@@ -1,0 +1,59 @@
+2019-11-08 11:23:03 - 
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/theme_vcenter/template/checkout/checkout.tpl
+CODE: <h1><?php echo $heading_title; ?></h1>
+MOD: fondy_payment
+
+ERROR: CODE NOT FOUND!
+FILE: admin/view/template/catalog/manufacturer_form.tpl
+CODE: name="name"
+MOD: Auto URL amigável Admin
+
+ERROR: FILE NOT FOUND!
+FILE: /home/v-center/web/v-center.in.ua/public_html/catalog/model/tool/simpleapimain.php
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: FILE NOT FOUND!
+FILE: /home/v-center/web/v-center.in.ua/public_html/admin/controller/sale/customer.php
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: FILE NOT FOUND!
+FILE: /home/v-center/web/v-center.in.ua/public_html/admin/view/template/sale/customer_form.tpl
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: CODE NOT FOUND!
+FILE: admin/view/template/sale/order_form.tpl
+CODE: <label class="col-sm-2 control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: FILE NOT FOUND!
+FILE: /home/v-center/web/v-center.in.ua/public_html/catalog/controller/total/shipping.php
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: FILE NOT FOUND!
+FILE: /home/v-center/web/v-center.in.ua/public_html/catalog/view/theme/*/template/total/shipping.tpl
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/default/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/theme_vcenter/template/checkout/guest_shipping.tpl
+CODE: $('#collapse-payment-address select[name=\'zone_id\']').html(html);
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/default/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: CODE NOT FOUND!
+FILE: catalog/view/theme/theme_vcenter/template/checkout/shipping_address.tpl
+CODE: <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
+MOD: OC 2: Новая Почта c калькулятором + отделения
+
+ERROR: FILE NOT FOUND!
+FILE: /home/v-center/web/v-center.in.ua/public_html/admin/language/*/common/menu.php
+MOD: Store Reviews 
